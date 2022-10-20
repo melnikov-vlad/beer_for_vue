@@ -1,6 +1,7 @@
 <template>
   <div class="home">
 
+    <vue_lesson02 label='JeckPot'/>
   </div>
 </template>
 
@@ -12,7 +13,9 @@ import vue_lesson02 from '@/components/vue_lesson02.vue'
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    HelloWorld,
+    vue_lesson02
+    
   }
 }
-</script>
+</script> 
