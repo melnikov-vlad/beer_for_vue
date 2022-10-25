@@ -1,7 +1,8 @@
 <template>
   <div class="home">
-
+    
     <vue_lesson02 label='JeckPot'/>
+    
   </div>
 </template>
 
