@@ -13,6 +13,8 @@ var _HomeView = _interopRequireDefault(require("../views/HomeView.vue"));
 
 var _foundFilm = _interopRequireDefault(require("../components/foundFilm.vue"));
 
+var _bad_page = _interopRequireDefault(require("../components/bad_page.vue"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -44,6 +46,14 @@ var routes = [{
   component: function component() {
     return Promise.resolve().then(function () {
       return _interopRequireWildcard(require('../components/foundFilm.vue'));
+    });
+  }
+}, {
+  path: '/bad_page',
+  name: 'bad_page',
+  component: function component() {
+    return Promise.resolve().then(function () {
+      return _interopRequireWildcard(require('../components/bad_page.vue'));
     });
   }
 }];

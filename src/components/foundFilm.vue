@@ -1,10 +1,10 @@
 <template>
-    <div>
+    <div >
         <h1>Пошук</h1>
         <input v-model="findFilm" type="text" name="filmName" id="search" placeholder="А Шо шукаємо?">
         <button @click="searchFilmList">Шукати</button>
         <br>
-        <label>
+        <!-- <label>
             movie
             <input type="radio" name="type" value="movie" id="" checked>
         </label>
@@ -15,9 +15,9 @@
         <label>
             episode
             <input type="radio" name="type" value="episode" id="">
-        </label>
+        </label> -->
 
-        <div v-for="film in films" :key="films.imdbID">
+        <div class="main_wrapper" v-for="film in films" :key="films.imdbID">
             <img :src="film.Poster" :alt="film.Title">
             <h2>{{ film.Title }}</h2>
         </div>
@@ -27,7 +27,7 @@
 <script>
 
 
-const URL = 'http://www.omdbapi.com/?i=tt3896198&apikey=a5a387ab';
+const URL = 'http://www.omdbapi.com/?apikey=a5a387ab&s=';
 
 export default {
     name: 'foundFilm',
@@ -44,22 +44,22 @@ export default {
         }
     },
     async mounted() {
-        const res = await fetch(URL);
-        const films = await res.json();
-        this.films = films.Search;
-        
+       this.searchFilmList()
     },
     methods: {
-        searchFilmList() {
-            // result = URL + `&=${findFilm}`
-            // return result
-
-            const newObjectFilm = {
-                name: this.findFilm
-            }
-
+        async searchFilmList() {
+            const res = await fetch(URL + this.findFilm);
+            const films = await res.json();
+            this.films = films.Search;
         }
 
     }
 }
 </script>
+
+<style scoped lang="scss">
+.main_wrapper{
+    display: inline-block;
+    margin-right: 20px;
+}
+</style>

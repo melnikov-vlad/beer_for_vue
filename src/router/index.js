@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import foundFilm from '../components/foundFilm.vue'
+import bad_page from '../components/bad_page.vue'
 
 Vue.use(VueRouter)
 
@@ -23,6 +24,11 @@ const routes = [
     path: '/foundFilm',
     name: 'foundFilm',
     component: () => import('../components/foundFilm.vue')
+  },
+  {
+    path: '/bad_page',
+    name: 'bad_page',
+    component: () => import('../components/bad_page.vue')
   }
 ]
 
