@@ -27,7 +27,7 @@
 <script>
 
 
-const URL = 'http://www.omdbapi.com/?apikey=a5a387ab&s=';
+const URL = 'http://www.omdbapi.com/?apikey=a5a387ab&s';
 
 export default {
     name: 'foundFilm',
@@ -44,7 +44,8 @@ export default {
         }
     },
     async mounted() {
-       this.searchFilmList()
+        this.searchFilmList()
+       console.log(URL);
     },
     methods: {
         async searchFilmList() {
