@@ -27,7 +27,7 @@
 <script>
 
 
-const URL = 'http://www.omdbapi.com/?apikey=a5a387ab&s';
+const URL = 'http://www.omdbapi.com/?apikey=a5a387ab&s=';
 
 export default {
     name: 'foundFilm',
