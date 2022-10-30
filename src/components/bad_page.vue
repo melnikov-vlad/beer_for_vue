@@ -9,13 +9,13 @@
         <button @click="searchNumberPerson">Почнемо пошук</button>
         <button>Випадкова персонаж</button>
 
-        <!-- <div v-for="onePers in persones" :key="persones.id">
+        <div v-for="onePers in persones" :key="persones.id">
             <img :src="onePers.image" :alt="onePers.name">
-            <h3>{{ onePers.name }}</h3> -->
-        <!-- </div> -->
+            <h3>{{ onePers.name }}</h3> 
+        </div>
         <div>
-            <img :src="persones.image" :alt="persones.name">
-            <h3>{{ persones.name }}</h3>
+            <!-- <img :src="persones.image" :alt="persones.name"> -->
+            <!-- <h3>{{ persones.name }}</h3> -->
         </div>
     </div>
 </template>
@@ -29,15 +29,17 @@ export default {
     components: {
 
     },
-    props: {
-        msg: String
-    },
+    
     data() {
         return {
             persones: [],
             numberPerson: '',
             
         }
+    },
+    props: {
+        type: String,
+        default: '',
     },
     async mounted() {
         this.searchNumberPerson()
@@ -47,7 +49,9 @@ export default {
         async searchNumberPerson() {
             const res = await fetch(URL + this.numberPerson);
             const persones = await res.json();
-            this.persones = persones.Search;  
+            this.persones = persones.results;  
+            
+            
         },
     }
 }
