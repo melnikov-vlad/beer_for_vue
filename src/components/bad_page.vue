@@ -1,7 +1,6 @@
 <template>
     <div class="main_wrapper">
         <h1>Великий світ Ріка та Морті</h1>
-        <img class="logo" src="../assets/image/logo-2.webp" alt="">
         <label for="search">
             <h2>Давай число від 1 до 826 і подивимося який персонаж тобі випаде</h2>
             <input v-model="numberPerson" class="inp_search" type="text" name="findphrases" id="search"
@@ -47,7 +46,7 @@ export default {
             persones: [],
             persone: {},
             numberPerson: '',
-            
+
         }
     },
     props: {
@@ -66,16 +65,16 @@ export default {
         async searchAllPerson() {
             const res = await fetch(URL);
             const persones = await res.json();
-            this.persones = persones.results;  
-            
-            
+            this.persones = persones.results;
+
+
         },
     }
 }
 
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="scss" src="../assets/styles/index.scss">
 .inp_search {
     padding: 20px;
     margin-bottom: 20px;
