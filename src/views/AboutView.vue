@@ -42,7 +42,7 @@
       </label>
       <br>
       <button class="btn_search" @click="searchNumberPerson">Почнемо пошук</button>
-      <button class="btn_search" @click="">Випадкова персонаж</button>
+      <!-- <button class="btn_search" @click="">Випадкова персонаж</button> -->
       <!-- if we have single person -->
       <div class="main_img" v-if="persone.name">
         <img class="img_found" :src="persone.image" :alt="persone.name">
