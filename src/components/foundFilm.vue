@@ -52,8 +52,10 @@ export default {
             const res = await fetch(URL + this.findFilm);
             const films = await res.json();
             this.films = films.Search;
-        }
-
+        },
+         random() {
+            return Math.floor(Math.random() * (826 - 1 + 1)) + 1;
+        },
     }
 }
 </script>
